@@ -8,6 +8,10 @@ export class UserService {
 
   constructor(private db: AngularFireDatabase) { }
 
+  get(uid: string) {
+    return this.db.object('/users/' + uid);
+  }
+
   save(user: firebase.User) {
     this.db.object('/users/' + user.uid).update({
       name: user.displayName,
