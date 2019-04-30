@@ -55,7 +55,6 @@ import { ProductService } from './product.service';
     CustomFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-
       { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
