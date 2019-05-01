@@ -28,15 +28,16 @@ export class ShoppingCartService {
     return result.key;
   }
 
-  async addToCart(product: Product) {
-    let cartId = await this.getorCreateCartId();
-    let item$ = this.db.object('/shopping-carts/' + cartId + '/items/' + product.$key);
-    item$.take(1).subscribe(item => {
-      if (item.$exists()) item$.update({ quantity: item.quantity + 1 })
-      else item$.set({ product: product, quantity: 1 });
-    })
-
+  private getItem(cartId: string, productId: string) {
+    return this.db.object('/shopping-carts/' + cartId + '/items/' + productId);
   }
 
+  async addToCart(product: Product) {
+    let cartId = await this.getorCreateCartId();
+    let item$ = this.getItem(cartId, product.$key);
+    item$.take(1).subscribe(item => {
+      item$.update({ product: product, quantity: (item.quantity || 0) + 1 })
+    })
+  }
 
 }
