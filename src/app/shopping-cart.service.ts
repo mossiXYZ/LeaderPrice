@@ -15,11 +15,12 @@ export class ShoppingCartService {
     })
   }
 
-  private getCart(cartId: string) {
+  async getCart() {
+    let cartId = await this.getorCreateCartId();
     return this.db.object('/shopping-carts/' + cartId)
   }
 
-  private async getorCreateCartId() {
+  private async getorCreateCartId(): Promise<string> {
     let cartId = localStorage.getItem('cartId');
     if (cartId) return cartId;
 
