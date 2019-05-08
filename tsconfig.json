@@ -14,6 +14,12 @@
     "lib": [
       "es2016",
       "dom"
-    ]
+    ],
+    "BaseUrl": "./src",
+    "path": {
+      "shared/*": [
+        "app/shared/*"
+      ]
+    }
   }
 }
