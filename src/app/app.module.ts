@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { CoreModule } from './core/core.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CoreModule } from './core/core.module';
     AdminModule,
     ShoppingModule,
     CoreModule,
+    AngularFontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
 
     RouterModule.forRoot([
