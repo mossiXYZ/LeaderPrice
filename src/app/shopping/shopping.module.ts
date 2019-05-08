@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../shared/services/auth-guard.service';
+import { ProductFormComponent } from '../admin/components/product-form/product-form.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { AuthGuard } from '../shared/services/auth-guard.service';
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
     ProductsComponent,
+    ProductFormComponent,
     ShoppingCartComponent,
     CheckOutComponent,
     OrderSuccessComponent,

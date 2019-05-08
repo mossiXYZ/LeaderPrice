@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import { DataTableModule } from 'angular-4-data-table';
 import { AppComponent } from './app.component';
-import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
-import { HomeComponent } from './home/home.component';
+import { BsNavbarComponent } from './core/components/bs-navbar/bs-navbar.component';
+import { HomeComponent } from './core/components/home/home.component';
 import { ProductsComponent } from './shopping/components/products/products.component';
 import { ShoppingCartComponent } from './shopping/components/shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './shopping/components/check-out/check-out.component';
@@ -19,7 +19,7 @@ import { OrderSuccessComponent } from './shopping/components/order-success/order
 import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/components/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/components/admin-orders/admin-orders.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './core/components/login/login.component';
 import { AuthGuard } from './shared/services/auth-guard.service';
 import { AdminAuthGaurd } from './admin/services/admin-auth-gaurd.service';
 import { ProductFormComponent } from './admin/components/product-form/product-form.component';
@@ -29,21 +29,18 @@ import { ShippingFormComponent } from './shopping/components/shipping-form/shipp
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BsNavbarComponent,
-    HomeComponent,
-    LoginComponent,
-    ProductFormComponent,
-
   ],
   imports: [
     BrowserModule,
     SharedModule,
     AdminModule,
     ShoppingModule,
+    CoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -53,7 +50,7 @@ import { ShoppingModule } from './shopping/shopping.module';
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: ProductsComponent },
-      { path: 'login', component: LoginComponent },
+      { path: 'login', component: LoginComponent }
     ])
   ],
   providers: [],
