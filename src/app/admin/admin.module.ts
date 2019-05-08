@@ -12,10 +12,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
     SharedModule,
-    DataTableModule,
     RouterModule.forChild([
 
       {
