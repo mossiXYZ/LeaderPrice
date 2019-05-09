@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
-      Fruits & Légumes <i class="fa fa-leaf " style="color:green"></i>
+      Fruits & Légumes <i class="fa Example of envira fa-envira " style="color:green"></i>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
       aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
 
         <ng-template #anonymousUser>
           <li *ngIf="!user " class="nav-item">
-            <a class="nav-link" routerLink="/login">Login</a>
+            <a class="nav-link" routerLink="/login">Connexion</a>
           </li>
         </ng-template>
 
@@ -34,13 +34,13 @@
           <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false"> {{appUser.name}}</a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
+            <a class="dropdown-item" routerLink="/my/orders">Mes commandes</a>
             <ng-container *ngIf="appUser.isAdmin ">
-              <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-              <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
+              <a class="dropdown-item" routerLink="/admin/orders">Gérer les commandes</a>
+              <a class="dropdown-item" routerLink="/admin/products">Gérer les produits</a>
             </ng-container>
 
-            <a class="dropdown-item" (click)="logout()">Log Out</a>
+            <a class="dropdown-item" (click)="logout()">Déconnexion</a>
           </div>
         </li>
       </ul>

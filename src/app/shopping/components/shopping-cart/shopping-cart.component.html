@@ -1,16 +1,16 @@
-<h1>Shopping Cart</h1>
+<h1>Votre panier </h1>
 <div class="row col-10" *ngIf="cart$ | async as cart">
   <p>
-    You have {{ cart.totalItemsCount }} items in your shopping cart.
-    <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-light btn-sm">Clear Shopping Cart</button>
+    Vous avez {{ cart.totalItemsCount }} articles dans votre panier.
+    <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-light btn-sm">Effacer le panier</button>
   </p>
   <table class="table">
     <thead>
       <tr>
         <th></th>
-        <th>Product</th>
-        <th class="text-center" style="width: 230px">Quantity</th>
-        <th class="text-right" style="width: 200px">Price</th>
+        <th>Produit</th>
+        <th class="text-center" style="width: 230px">Quantité</th>
+        <th class="text-right" style="width: 200px">Prix</th>
       </tr>
     </thead>
     <tbody>
@@ -35,6 +35,6 @@
     </tfoot>
   </table>
 
-  <a *ngIf="cart.items.length" routerLink="/check-out" class="btn btn-primary">Check Out</a>
+  <a *ngIf="cart.items.length" routerLink="/check-out" class="btn btn-primary">la caisse</a>
 
 </div>
