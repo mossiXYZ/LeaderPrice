@@ -13,7 +13,13 @@ import { Product } from '../../../shared/models/product';
 export class ProductFormComponent implements OnInit {
 
   categories$;
-  product: Product;
+  product: Product = {
+    $key: '',
+    title: '',
+    price: null,
+    category: '',
+    imageUrl: '',
+  };
   id;
 
   constructor(
